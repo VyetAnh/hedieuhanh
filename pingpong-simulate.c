@@ -15,7 +15,7 @@ void ping_thread(void *aux UNUSED) {
     for (int i = 0; i < 5; i++) {
         sema_down(&sema_ping);  // Đợi semaphore_ping
         printf("ping ");
-        timer_msleep(1000);  // Giả lập thời gian trôi qua (100ms)
+        timer_msleep(1000);  // Giả lập thời gian trôi qua
         sema_up(&sema_pong);  // Up semaphore_pong để bật "pong"
     }
 }
@@ -24,7 +24,7 @@ void pong_thread(void *aux UNUSED) {
     for (int i = 0; i < 5; i++) {
         sema_down(&sema_pong);  // Đợi semaphore_pong
         printf("pong ");
-        timer_msleep(1000);  // Giả lập thời gian trôi qua (100ms)
+        timer_msleep(1000);  // Giả lập thời gian trôi qua
         sema_up(&sema_ping);  // Up semaphore_ping để bật "ping"
     }
 }
