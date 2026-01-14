@@ -30,6 +30,7 @@ void pong_thread(void *aux UNUSED) {
 }
 
 void test_pingpong_simulate(void) {
+    printf ("Test: Ping-Pong synchronization\n");
     // Khởi tạo semaphore, sema_ping bắt đầu với giá trị 1, sema_pong với 0
     sema_init(&sema_ping, 1);
     sema_init(&sema_pong, 0);
